@@ -1,8 +1,12 @@
 package com.api.restful.springboot_api_restful_hibernate.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.api.restful.springboot_api_restful_hibernate.entities.Product;
 import com.api.restful.springboot_api_restful_hibernate.repositories.ProductRepository;
 
 @Service
@@ -12,6 +16,11 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository repository;
 
     //MOSTRAR TODO
+    @Override
+    @Transactional(readOnly = true)
+    public List<Product> findAll(){
+        return (List<Product>) repository.findAll();
+    }
 
     //BUSCAR POR ID
 
