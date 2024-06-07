@@ -31,6 +31,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     //AGREGAR
+    @Overrride
+    @Transactional
+    public Product save(Product product){
+        return repository.save(product);
+    }
 
     //ACTUALIZAR
 
