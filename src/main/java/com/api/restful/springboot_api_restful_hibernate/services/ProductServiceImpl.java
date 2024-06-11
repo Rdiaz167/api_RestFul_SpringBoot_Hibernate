@@ -56,4 +56,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     //ELIMINAR
+    @Override
+    @Transactional
+    public Optional<Product> delete(Long id) {
+        Optional<Product> productOptional = repository.findById(id);
+        productOptional.ifPresent(productDb->{
+            repository.delete(productDb);;
+        });
+    }
 }
