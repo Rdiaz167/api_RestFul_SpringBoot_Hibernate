@@ -63,5 +63,6 @@ public class ProductServiceImpl implements ProductService {
         productOptional.ifPresent(productDb->{
             repository.delete(productDb);;
         });
+        return productOptional;
     }
 }
