@@ -44,7 +44,7 @@ public class ProductController {
     }
 
     //AGREGAR
-    @PostMapping("/{id}")
+    @PostMapping
     public ResponseEntity<Product> create(@RequestBody Product product) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(product));
     }
