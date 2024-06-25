@@ -20,7 +20,7 @@ import com.api.restful.springboot_api_restful_hibernate.services.ProductService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@CrossOrigin()
+
 @RestController
 @RequestMapping("/api")
 public class ProductController {
